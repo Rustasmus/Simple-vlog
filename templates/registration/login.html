@@ -11,10 +11,10 @@
             {% csrf_token %}
             {{ form|crispy }}
             <div class='row justify-content-center' style='margin-top:25px;'>
-                <button class="btn btn-primary" type='submit'>Submit</button>
+                <button class="btn btn-primary" type='submit'>Ввести</button>
             </div>
             <div class='row justify-content-center' style='margin-top:25px;'>
-                <a href="{% url 'sing-up' %}">Create account</a>
+                <a href="{% url 'sing-up' %}">Создать аккаунт</a>
             </div>
         </form>
     </div>

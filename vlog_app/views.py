@@ -13,11 +13,6 @@ def index(request):
         'all_posts': all_posts,
         'contacts': SITE_INFO['contacts'],
         "site_info": SITE_INFO['site_info'],
-        'about': 'Эта страничка показывает наши навыки как FrontEnd так и BackEnd',
-        'Follow_on_Twitter': 'https://twitter.com/?lang=ru',
-        'Like_on_Facebook': 'https://www.facebook.com/',
-        'description_vlog': 'За частую нам хочется поведать всему миру о том или ином событии '
-
     }
     return render(
         request=request,
@@ -91,7 +86,8 @@ def registration(request):
 
 def edit_post(request, post_id):
     post = get_object_or_404(
-        Post, pk=post_id,
+        Post,
+        pk=post_id,
         user_id__id=request.user.id,
         is_delete=False
     )
@@ -129,9 +125,6 @@ def my_profile(request):
         'all_posts': all_posts,
         'contacts': SITE_INFO['contacts'],
         "site_info": SITE_INFO['site_info'],
-        # 'Follow_on_Twitter': 'https://twitter.com/?lang=ru',
-        # 'Like_on_Facebook': 'https://www.facebook.com/',
-        # 'description_vlog': 'За частую нам хочется поведать всему миру о том или ином событии '
 
     }
     return render(
